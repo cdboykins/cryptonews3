@@ -1,15 +1,27 @@
-<% @prices["DISPLAY"] %>
-</br></br>
-        <% @prices["DISPLAY"].each do |key, value|%>
-        <%= key %> - <%= value["USD"]["PRICE"]%></br>
-        24h High: <%= value["USD"]["HIGHDAY"]%></br>
-        24h Low: <%= value["USD"]["LOWDAY"]%></br>
-        MarketCap: <%= value["USD"]["MKTCAP"]%></br></br>
-        
-        <% end%>
-    </br></br>
-    
-
+<table class="table table-sm table-striped table-bordered table-hover">
+  <thead class="thead-dark"> 
+    <tr>
+      <th scope="col">NAME</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">24HR HIGH</th>
+      <th scope="col">24HR LOW</th>
+      <th scope="col">MARKET CAP</th>
+    </tr>
+  </thead>
+  <% @prices["DISPLAY"].each do |key, value|%>
+  <tbody>
+    <tr>
+      <td> <%= key %></td>
+      <td><%= value["USD"]["PRICE"]%></td>
+      <td><%= value["USD"]["HIGHDAY"]%></td>
+      <td><%= value["USD"]["LOWDAY"]%></td>
+      <td><%= value["USD"]["MKTCAP"]%></td>
+    </tr>
+     <% end%>
+  </tbody>
+</table>
+</br>
+</br>
 
 <div class="container">
    <div class="row">
